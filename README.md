@@ -1,2 +1,2 @@
-# Aura-Paw-
-website for pet grooming 
+# Aura & Paw Grooming Studio
+Luxury Pet Grooming Studio & Spa website.
