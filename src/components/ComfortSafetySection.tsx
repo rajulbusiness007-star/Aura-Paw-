@@ -165,7 +165,24 @@ export const ComfortSafetySection: React.FC<ComfortSafetySectionProps> = ({ onOp
         {/* Tab 2: 5-Step Process */}
         {activeTab === 'process' && (
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {fiveStepJourney.map((step) => (\n              <div\n                key={step.step}\n                className="bg-white p-6 rounded-2xl border border-[#DCE8DC] flex flex-col justify-between shadow-sm relative"\n              >\n                <div>\n                  <span className="text-3xl font-extrabold text-[#C5A46D] font-mono block mb-3">\n                    {step.step}\n                  </span>\n                  <h4 className="text-base font-bold text-[#183D32] mb-2 leading-snug">\n                    {step.title}\n                  </h4>\n                  <p className="text-xs text-[#516155] leading-relaxed">\n                    {step.description}\n                  </p>\n                </div>\n              </div>\n            ))}
+            {fiveStepJourney.map((step) => (
+              <div
+                key={step.step}
+                className="bg-white p-6 rounded-2xl border border-[#DCE8DC] flex flex-col justify-between shadow-sm relative"
+              >
+                <div>
+                  <span className="text-3xl font-extrabold text-[#C5A46D] font-mono block mb-3">
+                    {step.step}
+                  </span>
+                  <h4 className="text-base font-bold text-[#183D32] mb-2 leading-snug">
+                    {step.title}
+                  </h4>
+                  <p className="text-xs text-[#516155] leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         )}
 
