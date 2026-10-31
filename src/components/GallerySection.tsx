@@ -20,28 +20,28 @@ export const GallerySection: React.FC = () => {
       title: 'Fluffy Golden Doodle Portrait',
       subtitle: 'Teddy-bear scissor finish and silk leave-in',
       category: 'Dogs',
-      imageUrl: '/src/assets/images/hero_groomed_dog_1793371516993.jpg'
+      imageUrl: '/assets/images/hero_groomed_dog_1793371516993.jpg'
     },
     {
       id: 'g-2',
       title: 'Cockapoo Teddy Bear Makeover',
       subtitle: 'Rounded cheeks, clear eye-trim and velvety ears',
       category: 'Dogs',
-      imageUrl: '/src/assets/images/grooming_after_dog_1793371518089.jpg'
+      imageUrl: '/assets/images/grooming_after_dog_1793371518089.jpg'
     },
     {
       id: 'g-3',
       title: 'Serene British Shorthair Groom',
       subtitle: 'Silk & chamomile calming wash in our private feline suite',
       category: 'Cats',
-      imageUrl: '/src/assets/images/cat_grooming_after_1793371518507.jpg'
+      imageUrl: '/assets/images/cat_grooming_after_1793371518507.jpg'
     },
     {
       id: 'g-4',
       title: 'Master Groomer at Work',
       subtitle: 'Elena gently brushing a calm terrier companion',
       category: 'Salon & Staff',
-      imageUrl: '/src/assets/images/groomer_artisan_1793371518503.jpg'
+      imageUrl: '/assets/images/groomer_artisan_1793371518503.jpg'
     },
     {
       id: 'g-5',
