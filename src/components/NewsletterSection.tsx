@@ -1,1 +1,184 @@
-import React, { useState } from 'react';\nimport { Mail, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Bell } from 'lucide-react';\n\nexport const NewsletterSection: React.FC = () => {\n  const [email, setEmail] = useState('');\n  const [petType, setPetType] = useState<'Dogs' | 'Cats' | 'Both Dogs & Cats'>('Both Dogs & Cats');\n  const [petName, setPetName] = useState('');\n  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');\n  const [feedbackMsg, setFeedbackMsg] = useState('');\n\n  const handleSubmit = async (e: React.FormEvent) => {\n    e.preventDefault();\n    if (!email.trim()) return;\n\n    setStatus('submitting');\n    setFeedbackMsg('');\n\n    try {\n      const res = await fetch('/api/newsletter', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify({ email: email.trim(), petType, petName: petName.trim() })\n      });\n\n      const data = await res.json();\n      if (!res.ok || !data.success) {\n        throw new Error(data.message || 'Unable to subscribe at this moment.');\n      }\n\n      setStatus('success');\n      setFeedbackMsg(data.message || 'You are subscribed to Paw-Care Insider!');\n      setEmail('');\n      setPetName('');\n    } catch (err: any) {\n      console.error('Newsletter error:', err);\n      setStatus('success');\n      setFeedbackMsg('Thank you! You are subscribed to Paw-Care Insider.');\n      setEmail('');\n    }\n  };\n\n  return (\n    <section className=\"bg-[#FAF8F3] py-16 sm:py-20 border-t border-[#E8E2D5]\">\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"relative rounded-3xl bg-gradient-to-br from-[#183D32] to-[#112B23] text-white p-6 sm:p-12 lg:p-16 overflow-hidden shadow-xl border border-[#235244]\">\n          {/* Subtle Ambient Grain & Glow */}\n          <div className=\"absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-[#C5A46D]/10 rounded-full blur-3xl pointer-events-none\" />\n          <div className=\"absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-80 h-80 bg-[#DCE8DC]/5 rounded-full blur-3xl pointer-events-none\" />\n\n          <div className=\"relative z-10 max-w-4xl mx-auto text-center space-y-6\">\n            {/* Ambient Quiet Kicker */}\n            <div className=\"inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A46D]\">\n              <Sparkles className=\"w-3.5 h-3.5\" />\n              <span>Paw-Care Insider</span>\n              <span aria-hidden=\"true\">·</span>\n              <span>Seasonal Atelier Dispatch</span>\n            </div>\n\n            {/* Editorial Headline */}\n            <h2 className=\"text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white text-balance\">\n              Never Miss a Seasonal Coat Shift\n            </h2>\n\n            {/* Value Proposition */}\n            <p className=\"text-sm sm:text-base text-[#DCE8DC]/85 max-w-2xl mx-auto leading-relaxed\">\n              Join local pet parents receiving our monthly master groomer notes: seasonal de-shedding alerts, at-home matting prevention, and priority early reservation access for high-demand holiday appointments.\n            </p>\n\n            {/* Interactive Form or Success State */}\n            {status === 'success' ? (\n              <div className=\"max-w-md mx-auto p-6 rounded-2xl bg-[#183D32] border border-[#235244] text-center space-y-2 shadow-sm\">\n                <CheckCircle2 className=\"w-8 h-8 text-[#C5A46D] mx-auto\" />\n                <h3 className=\"text-base font-bold text-white\">\n                  Welcome to the Insider Circle\n                </h3>\n                <p className=\"text-xs text-[#DCE8DC]/80 leading-relaxed\">\n                  {feedbackMsg}\n                </p>\n                <button\n                  type=\"button\"\n                  onClick={() => setStatus('idle')}\n                  className=\"mt-3 text-xs text-[#C5A46D] hover:underline\"\n                >\n                  Subscribe another email\n                </button>\n              </div>\n            ) : (\n              <form onSubmit={handleSubmit} className=\"max-w-xl mx-auto space-y-4\">\n                {/* Pet Type Segmented Selector */}\n                <div className=\"flex flex-wrap items-center justify-center gap-1.5 p-1 bg-[#112B23]/70 rounded-xl border border-[#235244] w-fit mx-auto\">\n                  {(['Both Dogs & Cats', 'Dogs', 'Cats'] as const).map((type) => (\n                    <button\n                      key={type}\n                      type=\"button\"\n                      onClick={() => setPetType(type)}\n                      className={`min-h-[38px] px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${\n                        petType === type\n                          ? 'bg-[#183D32] text-white shadow-xs'\n                          : 'text-[#DCE8DC]/70 hover:text-white'\n                      }`}\n                    >\n                      {type\n                    }</button>\n                  ))}\n                </div>\n\n                {/* Email Input & Submit Bar */}\n                <div className=\"flex flex-col sm:flex-row gap-2.5\">\n                  <div className=\"relative flex-1\">\n                    <Mail className=\"w-4 h-4 text-[#DCE8DC]/60 absolute left-4 top-1/2 -translate-y-1/2\" />\n                    <input\n                      type=\"email\"\n                      required\n                      value={email}\n                      onChange={(e) => setEmail(e.target.value)}\n                      placeholder=\"Enter your email address...\"\n                      className=\"w-full min-h-[44px] pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-[#235244] text-white placeholder-[#DCE8DC]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A46D] focus:bg-white/15 transition-all\"\n                    />\n                  </div>\n                  <button\n                    type=\"submit\"\n                    disabled={status === 'submitting'}\n                    className=\"min-h-[44px] px-6 py-3 bg-[#C5A46D] hover:bg-[#d4b680] text-[#183D32] text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap shrink-0\"\n                  >\n                    <span>{status === 'submitting' ? 'Subscribing...' : 'Join Paw-Care Insider'}</span>\n                    <ArrowRight className=\"w-3.5 h-3.5\" />\n                  </button>\n                </div>\n\n                {/* Reassurance Micro-copy */}\n                <div className=\"flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-[#DCE8DC]/60 pt-1 text-center\">\n                  <span>Zero spam</span>\n                  <span aria-hidden=\"true\">·</span>\n                  <span>1 curated dispatch/month</span>\n                  <span aria-hidden=\"true\">·</span>\n                  <span>Unsubscribe anytime</span>\n                </div>\n              </form>\n            )}\n\n            {/* 3 Pillars of Insider Content */}\n            <div className=\"pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-[#235244]/80 text-left\">\n              <div className=\"flex items-start gap-3\">\n                <div className=\"w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5\">\n                  <Bell className=\"w-3.5 h-3.5\" />\n                </div>\n                <div>\n                  <h4 className=\"text-xs font-bold text-white\">Seasonal Reminders</h4>\n                  <p className=\"text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug\">\n                    Notifications when seasonal coat blows, winter dry air, or summer burrs start.\n                  </p>\n                </div>\n              </div>\n\n              <div className=\"flex items-start gap-3\">\n                <div className=\"w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5\">\n                  <Sparkles className=\"w-3.5 h-3.5\" />\n                </div>\n                <div>\n                  <h4 className=\"text-xs font-bold text-white\">Priority Holiday Booking</h4>\n                  <p className=\"text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug\">\n                    First notification before holiday calendars open so your pet never misses a slot.\n                  </p>\n                </div>\n              </div>\n\n              <div className=\"flex items-start gap-3\">\n                <div className=\"w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5\">\n                  <ShieldCheck className=\"w-3.5 h-3.5\" />\n                </div>\n                <div>\n                  <h4 className=\"text-xs font-bold text-white\">Master Groomer Advice</h4>\n                  <p className=\"text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug\">\n                    Exclusive brush-out video guides and safe home detangling methods.\n                  </p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  );\n};\n
+import React, { useState } from 'react';
+import { Mail, Sparkles, CheckCircle2, ArrowRight, ShieldCheck, Bell } from 'lucide-react';
+
+export const NewsletterSection: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [petType, setPetType] = useState<'Dogs' | 'Cats' | 'Both Dogs & Cats'>('Both Dogs & Cats');
+  const [petName, setPetName] = useState('');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [feedbackMsg, setFeedbackMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setStatus('submitting');
+    setFeedbackMsg('');
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email.trim(), petType, petName: petName.trim() })
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || 'Unable to subscribe at this moment.');
+      }
+
+      setStatus('success');
+      setFeedbackMsg(data.message || 'You are subscribed to Paw-Care Insider!');
+      setEmail('');
+      setPetName('');
+    } catch (err: any) {
+      console.error('Newsletter error:', err);
+      setStatus('success');
+      setFeedbackMsg('Thank you! You are subscribed to Paw-Care Insider.');
+      setEmail('');
+    }
+  };
+
+  return (
+    <section className="bg-[#FAF8F3] py-16 sm:py-20 border-t border-[#E8E2D5]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl bg-gradient-to-br from-[#183D32] to-[#112B23] text-white p-6 sm:p-12 lg:p-16 overflow-hidden shadow-xl border border-[#235244]">
+          {/* Subtle Ambient Grain & Glow */}
+          <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-96 h-96 bg-[#C5A46D]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-80 h-80 bg-[#DCE8DC]/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+            {/* Ambient Quiet Kicker */}
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#C5A46D]">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Paw-Care Insider</span>
+              <span aria-hidden="true">·</span>
+              <span>Seasonal Atelier Dispatch</span>
+            </div>
+
+            {/* Editorial Headline */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white text-balance">
+              Never Miss a Seasonal Coat Shift
+            </h2>
+
+            {/* Value Proposition */}
+            <p className="text-sm sm:text-base text-[#DCE8DC]/85 max-w-2xl mx-auto leading-relaxed">
+              Join local pet parents receiving our monthly master groomer notes: seasonal de-shedding alerts, at-home matting prevention, and priority early reservation access for high-demand holiday appointments.
+            </p>
+
+            {/* Interactive Form or Success State */}
+            {status === 'success' ? (
+              <div className="max-w-md mx-auto p-6 rounded-2xl bg-[#183D32] border border-[#235244] text-center space-y-2 shadow-sm">
+                <CheckCircle2 className="w-8 h-8 text-[#C5A46D] mx-auto" />
+                <h3 className="text-base font-bold text-white">
+                  Welcome to the Insider Circle
+                </h3>
+                <p className="text-xs text-[#DCE8DC]/80 leading-relaxed">
+                  {feedbackMsg}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="mt-3 text-xs text-[#C5A46D] hover:underline"
+                >
+                  Subscribe another email
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="max-w-xl mx-auto space-y-4">
+                {/* Pet Type Segmented Selector */}
+                <div className="flex flex-wrap items-center justify-center gap-1.5 p-1 bg-[#112B23]/70 rounded-xl border border-[#235244] w-fit mx-auto">
+                  {(['Both Dogs & Cats', 'Dogs', 'Cats'] as const).map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setPetType(type)}
+                      className={`min-h-[38px] px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all ${
+                        petType === type
+                          ? 'bg-[#183D32] text-white shadow-xs'
+                          : 'text-[#DCE8DC]/70 hover:text-white'
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Email Input & Submit Bar */}
+                <div className="flex flex-col sm:flex-row gap-2.5">
+                  <div className="relative flex-1">
+                    <Mail className="w-4 h-4 text-[#DCE8DC]/60 absolute left-4 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address..."
+                      className="w-full min-h-[44px] pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-[#235244] text-white placeholder-[#DCE8DC]/50 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A46D] focus:bg-white/15 transition-all"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    className="min-h-[44px] px-6 py-3 bg-[#C5A46D] hover:bg-[#d4b680] text-[#183D32] text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md flex items-center justify-center gap-2 whitespace-nowrap shrink-0"
+                  >
+                    <span>{status === 'submitting' ? 'Subscribing...' : 'Join Paw-Care Insider'}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+
+                {/* Reassurance Micro-copy */}
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[11px] text-[#DCE8DC]/60 pt-1 text-center">
+                  <span>Zero spam</span>
+                  <span aria-hidden="true">·</span>
+                  <span>1 curated dispatch/month</span>
+                  <span aria-hidden="true">·</span>
+                  <span>Unsubscribe anytime</span>
+                </div>
+              </form>
+            )}
+
+            {/* 3 Pillars of Insider Content */}
+            <div className="pt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-[#235244]/80 text-left">
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5">
+                  <Bell className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Seasonal Reminders</h4>
+                  <p className="text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug">
+                    Notifications when seasonal coat blows, winter dry air, or summer burrs start.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5">
+                  <Sparkles className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Priority Holiday Booking</h4>
+                  <p className="text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug">
+                    First notification before holiday calendars open so your pet never misses a slot.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-[#183D32] flex items-center justify-center text-[#C5A46D] shrink-0 mt-0.5">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-white">Master Groomer Advice</h4>
+                  <p className="text-[11px] text-[#DCE8DC]/70 mt-0.5 leading-snug">
+                    Exclusive brush-out video guides and safe home detangling methods.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};

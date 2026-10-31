@@ -203,4 +203,109 @@ export const ReviewsSection: React.FC = () => {
                 <h4 className="text-base font-bold">Thank You For Your Review!</h4>
                 <p className="text-xs">Your kind words have been published to our community wall.</p>
               </div>
-            ) : (\n              <form onSubmit={handleSubmitReview} className="space-y-4">\n                <div>\n                  <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                    Your Name *\n                  </label>\n                  <input\n                    type="text"\n                    required\n                    value={formData.author}\n                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}\n                    placeholder="e.g. Jessica Sterling"\n                    className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"\n                  />\n                </div>\n\n                <div className="grid grid-cols-2 gap-3">\n                  <div>\n                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                      Pet Name\n                    </label>\n                    <input\n                      type="text"\n                      value={formData.petName}\n                      onChange={(e) => setFormData({ ...formData, petName: e.target.value })}\n                      placeholder="e.g. Charlie"\n                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"\n                    />\n                  </div>\n                  <div>\n                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                      Pet Breed\n                    </label>\n                    <input\n                      type="text"\n                      value={formData.petBreed}\n                      onChange={(e) => setFormData({ ...formData, petBreed: e.target.value })}\n                      placeholder="e.g. Mini Bernedoodle"\n                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"\n                    />\n                  </div>\n                </div>\n\n                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">\n                  <div>\n                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                      Pet Category\n                    </label>\n                    <select\n                      value={formData.petType}\n                      onChange={(e) => setFormData({ ...formData, petType: e.target.value as any })}\n                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"\n                    >\n                      <option value="Dog">Dog</option>\n                      <option value="Cat">Cat</option>\n                      <option value="Puppy">Puppy</option>\n                    </select>\n                  </div>\n                  <div>\n                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                      Star Rating\n                    </label>\n                    <div className="flex items-center gap-1.5 pt-1">\n                      {[1, 2, 3, 4, 5].map((star) => (\n                        <button\n                          key={star}\n                          type="button"\n                          onClick={() => setFormData({ ...formData, rating: star })}\n                          className={`min-w-[44px] min-h-[44px] flex items-center justify-center text-2xl transition-transform hover:scale-110 ${star <= formData.rating ? 'text-[#C5A46D]' : 'text-gray-300'}`}\n                          aria-label={`${star} star rating`}\n                        >\n                          ★\n                        </button>\n                      ))}\n                    </div>\n                  </div>\n                </div>\n\n                <div>\n                  <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">\n                    Your Grooming Experience *\n                  </label>\n                  <textarea\n                    required\n                    rows={3}\n                    value={formData.text}\n                    onChange={(e) => setFormData({ ...formData, text: e.target.value })}\n                    placeholder="Tell us about the groomer, your pet's mood, and the haircut quality..."\n                    className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"\n                  />\n                </div>\n\n                <button\n                  type="submit"\n                  className="w-full min-h-[44px] py-3 bg-[#183D32] hover:bg-[#112B23] text-white text-sm font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center"\n                >\n                  Publish Verified Review\n                </button>\n              </form>\n            )}\n          </div>\n        </div>\n      )}\n    </section>\n  );\n};\n
+            ) : (
+              <form onSubmit={handleSubmitReview} className="space-y-4">
+                <div>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.author}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                    placeholder="e.g. Jessica Sterling"
+                    className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                      Pet Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.petName}
+                      onChange={(e) => setFormData({ ...formData, petName: e.target.value })}
+                      placeholder="e.g. Charlie"
+                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                      Pet Breed
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.petBreed}
+                      onChange={(e) => setFormData({ ...formData, petBreed: e.target.value })}
+                      placeholder="e.g. Mini Bernedoodle"
+                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                      Pet Category
+                    </label>
+                    <select
+                      value={formData.petType}
+                      onChange={(e) => setFormData({ ...formData, petType: e.target.value as any })}
+                      className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"
+                    >
+                      <option value="Dog">Dog</option>
+                      <option value="Cat">Cat</option>
+                      <option value="Puppy">Puppy</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                      Star Rating
+                    </label>
+                    <div className="flex items-center gap-1.5 pt-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, rating: star })}
+                          className={`min-w-[44px] min-h-[44px] flex items-center justify-center text-2xl transition-transform hover:scale-110 ${star <= formData.rating ? 'text-[#C5A46D]' : 'text-gray-300'}`}
+                          aria-label={`${star} star rating`}
+                        >
+                          ★
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-[#6A786E] block mb-1">
+                    Your Grooming Experience *
+                  </label>
+                  <textarea
+                    required
+                    rows={3}
+                    value={formData.text}
+                    onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                    placeholder="Tell us about the groomer, your pet's mood, and the haircut quality..."
+                    className="w-full min-h-[44px] px-3.5 py-2.5 rounded-xl border border-[#E8E2D5] text-sm focus:outline-none focus:ring-2 focus:ring-[#183D32]"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full min-h-[44px] py-3 bg-[#183D32] hover:bg-[#112B23] text-white text-sm font-semibold rounded-xl transition-colors shadow-sm flex items-center justify-center"
+                >
+                  Publish Verified Review
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};

@@ -138,7 +138,9 @@ export const TrustPillars: React.FC<TrustPillarsProps> = ({ onOpenBooking }) => 
                       4.96
                     </span>
                     <div className="flex items-center text-[#C5A46D]">
-                      {[...Array(5)].map((_, i) => (\n                        <Star key={i} className="w-4 h-4 fill-current" />\n                      ))}
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-current" />
+                      ))}
                     </div>
                   </div>
                   <span className="text-xs text-[#6A786E] font-medium block mt-0.5">
@@ -221,7 +223,7 @@ export const TrustPillars: React.FC<TrustPillarsProps> = ({ onOpenBooking }) => 
             <div>
               <div className="flex items-center justify-between mb-3">
                 <div className="w-8 h-8 rounded-lg bg-[#FAF8F3] text-[#183D32] flex items-center justify-center border border-[#E8E2D5]">
-                  <Calculator className="w-4 h-4 text-[#183D32]\" />
+                  <Calculator className="w-4 h-4 text-[#183D32]" />
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#6A786E]">
                   Transparent

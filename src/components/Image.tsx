@@ -96,4 +96,65 @@ export const Image: React.FC<ImageProps> = ({
   return (
     <div className={`${containerBase} ${containerClassName}`}>
       {/* 1. Placeholder Skeleton with Blur & Shimmer (Active while !isLoaded) */}
-      {!isLoaded && !hasError && (\n        <div\n          aria-hidden="true"\n          className={`absolute inset-0 z-0 bg-[#F4F1EA] flex items-center justify-center overflow-hidden transition-opacity duration-500 ${placeholderClassName}`}\n        >\n          {/* Subtle warm ambient wash */}\n          <div className="absolute inset-0 bg-gradient-to-tr from-[#E8E2D5]/70 via-[#F4F1EA] to-[#EEF4EE]/60" />\n\n          {/* Shimmer light sweep */}\n          {showShimmer && (\n            <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none motion-reduce:hidden" />\n          )}\n\n          {/* Subtle watermark brand icon */}\n          <div className="relative text-[#183D32]/15 flex flex-col items-center gap-1.5 select-none pointer-events-none">\n            <Sparkles className="w-6 h-6 animate-pulse motion-reduce:animate-none" />\n          </div>\n        </div>\n      )}\n\n      {/* 2. Error Fallback (Zero-Broken-Image Policy) */}\n      {hasError ? (\n        <div\n          role="img"\n          aria-label={alt || 'Image failed to load'}\n          className={`w-full h-full min-h-[120px] bg-[#FAF8F3] border border-[#E8E2D5] flex flex-col items-center justify-center p-4 text-center select-none ${className}`}\n        >\n          <div className="w-10 h-10 rounded-full bg-[#EEF4EE] text-[#183D32] flex items-center justify-center mb-2 shadow-xs">\n            <ImageOff className="w-5 h-5 opacity-70" />\n          </div>\n          <span className="text-xs font-semibold text-[#183D32] block max-w-xs truncate">\n            {alt || 'Pet Care Visual'}\n          </span>\n          <span className="text-[10px] text-[#6A786E] mt-0.5">\n            Aura &amp; Paw Salon Atelier\n          </span>\n        </div>\n      ) : (\n        /* 3. The Real Image with Native Lazy-Loading & Blur Transition */\n        <img\n          ref={imgRef}\n          src={currentSrc}\n          alt={alt}\n          loading={resolvedLoading}\n          decoding="async"\n          fetchPriority={resolvedFetchPriority}\n          onLoad={handleLoad}\n          onError={handleError}\n          style={style}\n          className={`transition-all duration-700 ease-out motion-reduce:transition-none ${\n            isLoaded\n              ? 'opacity-100 blur-0 scale-100'\n              : 'opacity-0 blur-md scale-[1.04]'\n          } ${fill ? 'w-full h-full object-cover' : ''} ${className}`}\n          {...restProps}\n        />\n      )}\n    </div>\n  );\n};\n\nexport default Image;\n
+      {!isLoaded && !hasError && (
+        <div
+          aria-hidden="true"
+          className={`absolute inset-0 z-0 bg-[#F4F1EA] flex items-center justify-center overflow-hidden transition-opacity duration-500 ${placeholderClassName}`}
+        >
+          {/* Subtle warm ambient wash */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#E8E2D5]/70 via-[#F4F1EA] to-[#EEF4EE]/60" />
+
+          {/* Shimmer light sweep */}
+          {showShimmer && (
+            <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none motion-reduce:hidden" />
+          )}
+
+          {/* Subtle watermark brand icon */}
+          <div className="relative text-[#183D32]/15 flex flex-col items-center gap-1.5 select-none pointer-events-none">
+            <Sparkles className="w-6 h-6 animate-pulse motion-reduce:animate-none" />
+          </div>
+        </div>
+      )}
+
+      {/* 2. Error Fallback (Zero-Broken-Image Policy) */}
+      {hasError ? (
+        <div
+          role="img"
+          aria-label={alt || 'Image failed to load'}
+          className={`w-full h-full min-h-[120px] bg-[#FAF8F3] border border-[#E8E2D5] flex flex-col items-center justify-center p-4 text-center select-none ${className}`}
+        >
+          <div className="w-10 h-10 rounded-full bg-[#EEF4EE] text-[#183D32] flex items-center justify-center mb-2 shadow-xs">
+            <ImageOff className="w-5 h-5 opacity-70" />
+          </div>
+          <span className="text-xs font-semibold text-[#183D32] block max-w-xs truncate">
+            {alt || 'Pet Care Visual'}
+          </span>
+          <span className="text-[10px] text-[#6A786E] mt-0.5">
+            Aura &amp; Paw Salon Atelier
+          </span>
+        </div>
+      ) : (
+        /* 3. The Real Image with Native Lazy-Loading & Blur Transition */
+        <img
+          ref={imgRef}
+          src={currentSrc}
+          alt={alt}
+          loading={resolvedLoading}
+          decoding="async"
+          fetchPriority={resolvedFetchPriority}
+          onLoad={handleLoad}
+          onError={handleError}
+          style={style}
+          className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
+            isLoaded
+              ? 'opacity-100 blur-0 scale-100'
+              : 'opacity-0 blur-md scale-[1.04]'
+          } ${fill ? 'w-full h-full object-cover' : ''} ${className}`}
+          {...restProps}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Image;
