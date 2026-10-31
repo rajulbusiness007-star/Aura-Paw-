@@ -1,0 +1,6 @@
+{
+  "name": "Aura & Paw Grooming Studio",
+  "description": "Luxury pet grooming atelier offering bespoke breed styling, fear-free bath and spa treatments, and compassionate 1-on-1 pet care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
