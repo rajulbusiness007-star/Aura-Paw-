@@ -50,7 +50,7 @@ export const MeetGroomers: React.FC = () => {
           <div className="lg:col-span-6">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-[#DCE8DC] aspect-[4/3] bg-neutral-100">
               <Image
-                src="/src/assets/images/groomer_artisan_1793371518503.jpg"
+                src="/assets/images/groomer_artisan_1793371518503.jpg"
                 alt="Founder and master stylist Elena Vance gently brushing a fluffy dog"
                 fill
               />
