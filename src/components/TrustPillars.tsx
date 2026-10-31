@@ -58,7 +58,7 @@ export const TrustPillars: React.FC<TrustPillarsProps> = ({ onOpenBooking }) => 
           {/* CARD 1: Artisanal Scissor Profiling & Master Craft (Hero Anchor) */}
           <div className="col-span-1 md:col-span-2 lg:col-span-7 lg:row-span-2 relative rounded-3xl overflow-hidden shadow-md border border-[#DCE8DC] group min-h-[380px] lg:min-h-[460px] flex flex-col justify-end p-6 sm:p-8">
             <Image
-              src="/src/assets/images/groomer_artisan_1793371518503.jpg"
+              src="/assets/images/groomer_artisan_1793371518503.jpg"
               alt="Elena Vance gently scissoring a dog's coat"
               fill
               className="object-cover group-hover:scale-102 transition-transform duration-500"
@@ -241,7 +241,7 @@ export const TrustPillars: React.FC<TrustPillarsProps> = ({ onOpenBooking }) => 
               className="w-full min-h-[44px] min-w-[44px] py-2.5 px-3 bg-[#FAF8F3] hover:bg-[#EEF4EE] text-[#183D32] text-xs font-bold rounded-xl border border-[#DCE8DC] transition-colors flex items-center justify-center gap-1.5"
             >
               <span>Instant Quote Estimator</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
