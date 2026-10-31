@@ -580,7 +580,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                                   isAdded
                                     ? 'bg-[#EEF4EE] border-[#183D32] ring-1 ring-[#183D32]/10 shadow-xs'
                                     : 'bg-white border-[#E8E2D5] hover:border-[#C5D4C5]'
-                                }`}\n                              >
+                                daylight}`}
+                              >
                                 <div className="mb-2">
                                   <div className="flex items-center justify-between gap-1 mb-1">
                                     <span className="text-xs font-bold text-[#183D32] leading-tight">

@@ -220,7 +220,20 @@ export const PricingCalculator: React.FC<PricingCalculatorProps> = ({ onSelectPa
                       { id: 'medium', label: 'Med (25-50 lbs)' },
                       { id: 'large', label: 'Large (50-80 lbs)' },
                       { id: 'giant', label: 'Giant (80+ lbs)' }
-                    ].map((w) => (\n                      <button\n                        key={w.id}\n                        type="button"\n                        onClick={() => setPetWeight(w.id as any)}\n                        className={`min-h-[44px] p-2.5 text-xs font-medium rounded-xl border flex items-center justify-center text-center transition-all ${\n                          petWeight === w.id\n                            ? 'bg-[#183D32] text-white border-[#183D32]'\n                            : 'bg-white text-[#202923] border-[#E8E2D5] hover:border-[#C5D4C5]'\n                        }`}\n                      >\n                        {w.label}\n                      </button>\n                    ))}
+                    ].map((w) => (
+                      <button
+                        key={w.id}
+                        type="button"
+                        onClick={() => setPetWeight(w.id as any)}
+                        className={`min-h-[44px] p-2.5 text-xs font-medium rounded-xl border flex items-center justify-center text-center transition-all ${
+                          petWeight === w.id
+                            ? 'bg-[#183D32] text-white border-[#183D32]'
+                            : 'bg-white text-[#202923] border-[#E8E2D5] hover:border-[#C5D4C5]'
+                        }`}
+                      >
+                        {w.label}
+                      </button>
+                    ))}
                   </div>
                 </div>
               )}
