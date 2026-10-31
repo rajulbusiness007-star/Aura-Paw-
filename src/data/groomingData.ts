@@ -217,8 +217,8 @@ export const BEFORE_AFTER_GALLERY: TransformationItem[] = [
     petName: 'Milo',
     petBreed: 'Cockapoo (3 Years Old)',
     category: 'Haircuts',
-    beforeImage: '/src/assets/images/grooming_before_dog_1793371517543.jpg',
-    afterImage: '/src/assets/images/grooming_after_dog_1793371518089.jpg',
+    beforeImage: '/assets/images/grooming_before_dog_1793371517543.jpg',
+    afterImage: '/assets/images/grooming_after_dog_1793371518089.jpg',
     serviceRendered: 'Signature Full Groom & Asian Fusion Teddy Bear Cut',
     stylistNote: 'Milo arrived with 4 months of overgrown, dense curly coat covering his vision. We performed a gentle detangling soak, precision scissoring around the eyes, rounded velvety cheeks, and a symmetrical hand-scissored body contour.',
     sessionDuration: '1 hour 45 mins'
@@ -228,8 +228,8 @@ export const BEFORE_AFTER_GALLERY: TransformationItem[] = [
     petName: 'Penelope',
     petBreed: 'British Shorthair Lilac',
     category: 'Cats',
-    beforeImage: '/src/assets/images/cat_grooming_after_1793371518507.jpg',
-    afterImage: '/src/assets/images/cat_grooming_after_1793371518507.jpg',
+    beforeImage: '/assets/images/cat_grooming_after_1793371518507.jpg',
+    afterImage: '/assets/images/cat_grooming_after_1793371518507.jpg',
     serviceRendered: 'Cat Luxury De-Shed & Botanical Silk Bath',
     stylistNote: 'Penelope was experiencing dense seasonal undercoat shedding. In our quiet feline suite with lavender pheromones, we performed an undercoat rake, gentle warm foam wash, and full comb out.',
     sessionDuration: '55 mins'
@@ -239,8 +239,8 @@ export const BEFORE_AFTER_GALLERY: TransformationItem[] = [
     petName: 'Oliver',
     petBreed: 'Golden Doodle (2 Years Old)',
     category: 'Dogs',
-    beforeImage: '/src/assets/images/hero_groomed_dog_1793371516993.jpg',
-    afterImage: '/src/assets/images/hero_groomed_dog_1793371516993.jpg',
+    beforeImage: '/assets/images/hero_groomed_dog_1793371516993.jpg',
+    afterImage: '/assets/images/hero_groomed_dog_1793371516993.jpg',
     serviceRendered: 'Atelier Royal Spa & Fluff Scissor Silhouette',
     stylistNote: 'Oliver is active outdoors. We treated his coat with our argan moisture pack, scissor-shaped his ears and muzzle, and finished with a paw pad deep butter conditioning.',
     sessionDuration: '2 hours'
@@ -288,7 +288,7 @@ export const GROOMERS: GroomerProfile[] = [
     experienceYears: 11,
     certifications: ['National Certified Master Groomer (NCMG)', 'Fear-Free Certified Professional', 'Pet First Aid & CPR'],
     specialty: 'Doodles, Poodles, Asian Fusion Scissoring & Anxious Pets',
-    imageUrl: '/src/assets/images/groomer_artisan_1793371518503.jpg',
+    imageUrl: '/assets/images/groomer_artisan_1793371518503.jpg',
     bio: 'With over a decade of dedicated styling in high-end European and Californian salons, Elena founded Aura & Paw to eliminate the assembly-line stress of conventional grooming and create an unhurried, loving sanctuary for pets.'
   },
   {
