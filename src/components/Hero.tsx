@@ -73,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-[#DCE8DC] bg-white aspect-[4/3] sm:aspect-square lg:aspect-[4/5]">
               <Image
-                src="/src/assets/images/hero_groomed_dog_1793371516993.jpg"
+                src="/assets/images/hero_groomed_dog_1793371516993.jpg"
                 alt="Radiant, freshly groomed Golden Doodle dog smiling happily in luxury pet salon"
                 fill
                 priority
