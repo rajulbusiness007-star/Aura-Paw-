@@ -1,0 +1,927 @@
+{
+  "Tier 1: Viewport Rendering": {
+    "passed": true,
+    "details": {
+      "375": {
+        "viewport": 375,
+        "bodyWidth": 367,
+        "bodyHeight": 38451,
+        "hasHeader": true,
+        "hasMain": true,
+        "hasFooter": true,
+        "sectionsFound": {
+          "services": true,
+          "safety": true,
+          "pricing": true,
+          "about": true,
+          "reviews": true,
+          "faq": true
+        },
+        "headingFontSizes": [
+          36,
+          30,
+          24,
+          30,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "bodyRendered": true,
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "390": {
+        "viewport": 390,
+        "bodyWidth": 382,
+        "bodyHeight": 37936,
+        "hasHeader": true,
+        "hasMain": true,
+        "hasFooter": true,
+        "sectionsFound": {
+          "services": true,
+          "safety": true,
+          "pricing": true,
+          "about": true,
+          "reviews": true,
+          "faq": true
+        },
+        "headingFontSizes": [
+          36,
+          30,
+          24,
+          30,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "bodyRendered": true,
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "768": {
+        "viewport": 768,
+        "bodyWidth": 760,
+        "bodyHeight": 28591,
+        "hasHeader": true,
+        "hasMain": true,
+        "hasFooter": true,
+        "sectionsFound": {
+          "services": true,
+          "safety": true,
+          "pricing": true,
+          "about": true,
+          "reviews": true,
+          "faq": true
+        },
+        "headingFontSizes": [
+          48,
+          36,
+          24,
+          36,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "bodyRendered": true,
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1024": {
+        "viewport": 1024,
+        "bodyWidth": 1016,
+        "bodyHeight": 22252,
+        "hasHeader": true,
+        "hasMain": true,
+        "hasFooter": true,
+        "sectionsFound": {
+          "services": true,
+          "safety": true,
+          "pricing": true,
+          "about": true,
+          "reviews": true,
+          "faq": true
+        },
+        "headingFontSizes": [
+          60,
+          48,
+          24,
+          48,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "bodyRendered": true,
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1280": {
+        "viewport": 1280,
+        "bodyWidth": 1272,
+        "bodyHeight": 21260,
+        "hasHeader": true,
+        "hasMain": true,
+        "hasFooter": true,
+        "sectionsFound": {
+          "services": true,
+          "safety": true,
+          "pricing": true,
+          "about": true,
+          "reviews": true,
+          "faq": true
+        },
+        "headingFontSizes": [
+          60,
+          48,
+          24,
+          48,
+          20,
+          20,
+          20,
+          20,
+          20,
+          20
+        ],
+        "bodyRendered": true,
+        "isPassing": true,
+        "failureReasons": []
+      }
+    }
+  },
+  "Tier 2: Horizontal Overflow": {
+    "passed": true,
+    "details": {
+      "375": {
+        "viewport": 375,
+        "innerWidth": 375,
+        "scrollWidth": 367,
+        "bodyScrollWidth": 367,
+        "overflowDelta": 0,
+        "hasRootOverflowConstraint": true,
+        "uncontainedOffendingElements": [],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "390": {
+        "viewport": 390,
+        "innerWidth": 390,
+        "scrollWidth": 382,
+        "bodyScrollWidth": 382,
+        "overflowDelta": 0,
+        "hasRootOverflowConstraint": true,
+        "uncontainedOffendingElements": [],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "768": {
+        "viewport": 768,
+        "innerWidth": 768,
+        "scrollWidth": 760,
+        "bodyScrollWidth": 760,
+        "overflowDelta": 0,
+        "hasRootOverflowConstraint": true,
+        "uncontainedOffendingElements": [],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1024": {
+        "viewport": 1024,
+        "innerWidth": 1024,
+        "scrollWidth": 1016,
+        "bodyScrollWidth": 1016,
+        "overflowDelta": 0,
+        "hasRootOverflowConstraint": true,
+        "uncontainedOffendingElements": [],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1280": {
+        "viewport": 1280,
+        "innerWidth": 1280,
+        "scrollWidth": 1272,
+        "bodyScrollWidth": 1272,
+        "overflowDelta": 0,
+        "hasRootOverflowConstraint": true,
+        "uncontainedOffendingElements": [],
+        "isPassing": true,
+        "failureReasons": []
+      }
+    }
+  },
+  "Tier 3: Mobile Touch Targets": {
+    "passed": true,
+    "details": {
+      "375": {
+        "viewport": 375,
+        "totalInspected": 13,
+        "passedCount": 13,
+        "failedCount": 0,
+        "inspections": [
+          {
+            "name": "Header: Hamburger Menu Button",
+            "category": "nav_toggle",
+            "selector": "button[aria-label=\"Toggle Navigation Menu\"]",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Sticky Mobile Bar: Call Salon Button",
+            "category": "sticky_bar",
+            "selector": ".fixed.bottom-0 a[href^=\"tel:\"]",
+            "measuredWidth": 113,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Sticky Mobile Bar: Book Appointment Button",
+            "category": "sticky_bar",
+            "selector": ".fixed.bottom-0 button",
+            "measuredWidth": 210,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "ComfortSafety: Concerns Tab Button",
+            "category": "filter_tab",
+            "selector": "#safety button:first",
+            "measuredWidth": 150,
+            "measuredHeight": 52,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "ComfortSafety: 5-Step Tab Button",
+            "category": "filter_tab",
+            "selector": "#safety button:second",
+            "measuredWidth": 150,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Dog Species Button",
+            "category": "filter_tab",
+            "selector": "#pricing dog button",
+            "measuredWidth": 65,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Cat Species Button",
+            "category": "filter_tab",
+            "selector": "#pricing cat button",
+            "measuredWidth": 134,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Dog Weight Button",
+            "category": "filter_tab",
+            "selector": "#pricing weight button",
+            "measuredWidth": 138.5,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "FAQ: Category Filter Tab",
+            "category": "filter_tab",
+            "selector": "#faq category button",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Reviews: Filter Tab Button",
+            "category": "filter_tab",
+            "selector": "#reviews filter button",
+            "measuredWidth": 93,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Reviews: Leave Review Button",
+            "category": "filter_tab",
+            "selector": "#reviews leave review button",
+            "measuredWidth": 93,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "BookingModal: Modal Close / Action Button",
+            "category": "modal_interactive",
+            "selector": "#test-modal-container button",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "BookingModal: Form Field Input",
+            "category": "modal_interactive",
+            "selector": "#test-modal-container input",
+            "measuredWidth": 277,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          }
+        ],
+        "isPassing": true,
+        "failures": []
+      },
+      "390": {
+        "viewport": 390,
+        "totalInspected": 13,
+        "passedCount": 13,
+        "failedCount": 0,
+        "inspections": [
+          {
+            "name": "Header: Hamburger Menu Button",
+            "category": "nav_toggle",
+            "selector": "button[aria-label=\"Toggle Navigation Menu\"]",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Sticky Mobile Bar: Call Salon Button",
+            "category": "sticky_bar",
+            "selector": ".fixed.bottom-0 a[href^=\"tel:\"]",
+            "measuredWidth": 118,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Sticky Mobile Bar: Book Appointment Button",
+            "category": "sticky_bar",
+            "selector": ".fixed.bottom-0 button",
+            "measuredWidth": 220,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "ComfortSafety: Concerns Tab Button",
+            "category": "filter_tab",
+            "selector": "#safety button:first",
+            "measuredWidth": 150,
+            "measuredHeight": 52,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "ComfortSafety: 5-Step Tab Button",
+            "category": "filter_tab",
+            "selector": "#safety button:second",
+            "measuredWidth": 150,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Dog Species Button",
+            "category": "filter_tab",
+            "selector": "#pricing dog button",
+            "measuredWidth": 65,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Cat Species Button",
+            "category": "filter_tab",
+            "selector": "#pricing cat button",
+            "measuredWidth": 134,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Pricing: Dog Weight Button",
+            "category": "filter_tab",
+            "selector": "#pricing weight button",
+            "measuredWidth": 146,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "FAQ: Category Filter Tab",
+            "category": "filter_tab",
+            "selector": "#faq category button",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Reviews: Filter Tab Button",
+            "category": "filter_tab",
+            "selector": "#reviews filter button",
+            "measuredWidth": 93,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "Reviews: Leave Review Button",
+            "category": "filter_tab",
+            "selector": "#reviews leave review button",
+            "measuredWidth": 93,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "BookingModal: Modal Close / Action Button",
+            "category": "modal_interactive",
+            "selector": "#test-modal-container button",
+            "measuredWidth": 44,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          },
+          {
+            "name": "BookingModal: Form Field Input",
+            "category": "modal_interactive",
+            "selector": "#test-modal-container input",
+            "measuredWidth": 292,
+            "measuredHeight": 44,
+            "meetsStandard": true,
+            "notes": "Compliant with >= 44x44px target"
+          }
+        ],
+        "isPassing": true,
+        "failures": []
+      }
+    }
+  },
+  "Tier 4: Bento UI Grid": {
+    "passed": true,
+    "details": {
+      "375": {
+        "viewport": 375,
+        "cardCount": 8,
+        "detectedColumns": 1,
+        "expectedColumns": "1 column (mobile stack)",
+        "hasOverlaps": false,
+        "overlappingPairs": [],
+        "cards": [
+          {
+            "index": 0,
+            "left": 16,
+            "top": 12649,
+            "right": 351,
+            "bottom": 13083,
+            "width": 335,
+            "height": 434
+          },
+          {
+            "index": 1,
+            "left": 16,
+            "top": 13103,
+            "right": 351,
+            "bottom": 13365,
+            "width": 335,
+            "height": 262
+          },
+          {
+            "index": 2,
+            "left": 16,
+            "top": 13385,
+            "right": 351,
+            "bottom": 13666,
+            "width": 335,
+            "height": 281
+          },
+          {
+            "index": 3,
+            "left": 16,
+            "top": 13686,
+            "right": 351,
+            "bottom": 13926,
+            "width": 335,
+            "height": 240
+          },
+          {
+            "index": 4,
+            "left": 16,
+            "top": 13946,
+            "right": 351,
+            "bottom": 14186,
+            "width": 335,
+            "height": 240
+          },
+          {
+            "index": 5,
+            "left": 16,
+            "top": 14206,
+            "right": 351,
+            "bottom": 14451,
+            "width": 335,
+            "height": 245
+          },
+          {
+            "index": 6,
+            "left": 16,
+            "top": 14471,
+            "right": 351,
+            "bottom": 14773,
+            "width": 335,
+            "height": 302
+          },
+          {
+            "index": 7,
+            "left": 16,
+            "top": 14793,
+            "right": 351,
+            "bottom": 15145,
+            "width": 335,
+            "height": 352
+          }
+        ],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "390": {
+        "viewport": 390,
+        "cardCount": 8,
+        "detectedColumns": 1,
+        "expectedColumns": "1 column (mobile stack)",
+        "hasOverlaps": false,
+        "overlappingPairs": [],
+        "cards": [
+          {
+            "index": 0,
+            "left": 16,
+            "top": 12432,
+            "right": 366,
+            "bottom": 12865,
+            "width": 350,
+            "height": 434
+          },
+          {
+            "index": 1,
+            "left": 16,
+            "top": 12885,
+            "right": 366,
+            "bottom": 13148,
+            "width": 350,
+            "height": 262
+          },
+          {
+            "index": 2,
+            "left": 16,
+            "top": 13168,
+            "right": 366,
+            "bottom": 13448,
+            "width": 350,
+            "height": 281
+          },
+          {
+            "index": 3,
+            "left": 16,
+            "top": 13468,
+            "right": 366,
+            "bottom": 13708,
+            "width": 350,
+            "height": 240
+          },
+          {
+            "index": 4,
+            "left": 16,
+            "top": 13728,
+            "right": 366,
+            "bottom": 13968,
+            "width": 350,
+            "height": 240
+          },
+          {
+            "index": 5,
+            "left": 16,
+            "top": 13988,
+            "right": 366,
+            "bottom": 14233,
+            "width": 350,
+            "height": 245
+          },
+          {
+            "index": 6,
+            "left": 16,
+            "top": 14253,
+            "right": 366,
+            "bottom": 14536,
+            "width": 350,
+            "height": 283
+          },
+          {
+            "index": 7,
+            "left": 16,
+            "top": 14556,
+            "right": 366,
+            "bottom": 14891,
+            "width": 350,
+            "height": 336
+          }
+        ],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "768": {
+        "viewport": 768,
+        "cardCount": 8,
+        "detectedColumns": 2,
+        "expectedColumns": "2 columns (tablet balanced)",
+        "hasOverlaps": false,
+        "overlappingPairs": [],
+        "cards": [
+          {
+            "index": 0,
+            "left": 24,
+            "top": 9775,
+            "right": 736,
+            "bottom": 10155,
+            "width": 712,
+            "height": 380
+          },
+          {
+            "index": 1,
+            "left": 24,
+            "top": 10179,
+            "right": 368,
+            "bottom": 10516,
+            "width": 344,
+            "height": 336
+          },
+          {
+            "index": 2,
+            "left": 392,
+            "top": 10179,
+            "right": 736,
+            "bottom": 10516,
+            "width": 344,
+            "height": 336
+          },
+          {
+            "index": 3,
+            "left": 24,
+            "top": 10540,
+            "right": 368,
+            "bottom": 10780,
+            "width": 344,
+            "height": 240
+          },
+          {
+            "index": 4,
+            "left": 392,
+            "top": 10540,
+            "right": 736,
+            "bottom": 10780,
+            "width": 344,
+            "height": 240
+          },
+          {
+            "index": 5,
+            "left": 24,
+            "top": 10804,
+            "right": 368,
+            "bottom": 11158,
+            "width": 344,
+            "height": 355
+          },
+          {
+            "index": 6,
+            "left": 392,
+            "top": 10804,
+            "right": 736,
+            "bottom": 11158,
+            "width": 344,
+            "height": 355
+          },
+          {
+            "index": 7,
+            "left": 24,
+            "top": 11182,
+            "right": 736,
+            "bottom": 11439,
+            "width": 712,
+            "height": 257
+          }
+        ],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1024": {
+        "viewport": 1024,
+        "cardCount": 8,
+        "detectedColumns": 5,
+        "expectedColumns": "multi-column grid (desktop >= 3 cols)",
+        "hasOverlaps": false,
+        "overlappingPairs": [],
+        "cards": [
+          {
+            "index": 0,
+            "left": 32,
+            "top": 7613,
+            "right": 577,
+            "bottom": 8205,
+            "width": 545,
+            "height": 592
+          },
+          {
+            "index": 1,
+            "left": 601,
+            "top": 7613,
+            "right": 984,
+            "bottom": 7899,
+            "width": 383,
+            "height": 286
+          },
+          {
+            "index": 2,
+            "left": 601,
+            "top": 7923,
+            "right": 984,
+            "bottom": 8205,
+            "width": 383,
+            "height": 282
+          },
+          {
+            "index": 3,
+            "left": 32,
+            "top": 8229,
+            "right": 333,
+            "bottom": 8518,
+            "width": 301,
+            "height": 290
+          },
+          {
+            "index": 4,
+            "left": 357,
+            "top": 8229,
+            "right": 659,
+            "bottom": 8518,
+            "width": 301,
+            "height": 290
+          },
+          {
+            "index": 5,
+            "left": 683,
+            "top": 8229,
+            "right": 984,
+            "bottom": 8518,
+            "width": 301,
+            "height": 290
+          },
+          {
+            "index": 6,
+            "left": 32,
+            "top": 8542,
+            "right": 496,
+            "bottom": 8822,
+            "width": 464,
+            "height": 279
+          },
+          {
+            "index": 7,
+            "left": 520,
+            "top": 8542,
+            "right": 984,
+            "bottom": 8822,
+            "width": 464,
+            "height": 279
+          }
+        ],
+        "isPassing": true,
+        "failureReasons": []
+      },
+      "1280": {
+        "viewport": 1280,
+        "cardCount": 8,
+        "detectedColumns": 5,
+        "expectedColumns": "multi-column grid (desktop >= 3 cols)",
+        "hasOverlaps": false,
+        "overlappingPairs": [],
+        "cards": [
+          {
+            "index": 0,
+            "left": 32,
+            "top": 7261,
+            "right": 727,
+            "bottom": 7830,
+            "width": 695,
+            "height": 570
+          },
+          {
+            "index": 1,
+            "left": 751,
+            "top": 7261,
+            "right": 1240,
+            "bottom": 7524,
+            "width": 489,
+            "height": 263
+          },
+          {
+            "index": 2,
+            "left": 751,
+            "top": 7548,
+            "right": 1240,
+            "bottom": 7830,
+            "width": 489,
+            "height": 282
+          },
+          {
+            "index": 3,
+            "left": 32,
+            "top": 7854,
+            "right": 419,
+            "bottom": 8099,
+            "width": 387,
+            "height": 245
+          },
+          {
+            "index": 4,
+            "left": 443,
+            "top": 7854,
+            "right": 829,
+            "bottom": 8099,
+            "width": 387,
+            "height": 245
+          },
+          {
+            "index": 5,
+            "left": 853,
+            "top": 7854,
+            "right": 1240,
+            "bottom": 8099,
+            "width": 387,
+            "height": 245
+          },
+          {
+            "index": 6,
+            "left": 32,
+            "top": 8123,
+            "right": 624,
+            "bottom": 8380,
+            "width": 592,
+            "height": 257
+          },
+          {
+            "index": 7,
+            "left": 648,
+            "top": 8123,
+            "right": 1240,
+            "bottom": 8380,
+            "width": 592,
+            "height": 257
+          }
+        ],
+        "isPassing": true,
+        "failureReasons": []
+      }
+    }
+  },
+  "Tier 5: Compilation Check": {
+    "passed": true,
+    "details": {
+      "typeScriptClean": true,
+      "typeScriptOutput": "Clean (0 errors)",
+      "buildClean": true,
+      "buildOutput": "\n> aura-paw-grooming-studio@1.0.0 build\n> vite build\n\n\u001b[36mvite v8.3.5 \u001b[32mbuilding client environment for production...\u001b[36m\u001b[39m\ntransforming...\n✓ 1682 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   3.66 kB │ gzip:   1.29 kB\ndist/assets/index-DDJj5mt5.css   58.10 kB │ gzip:  10.31 kB\ndist/assets/index-3TejftMZ.js   419.83 kB │ gzip: 116.76 kB\n\n\u001b[32m✓ built in 1.89s\u001b[39m\n",
+      "artifactsPresent": {
+        "html": true,
+        "css": true,
+        "js": true
+      },
+      "artifactSizes": {
+        "htmlBytes": 3664,
+        "cssBytes": 58102,
+        "jsBytes": 419835
+      },
+      "isPassing": true,
+      "failureReasons": []
+    }
+  }
+}
